@@ -1,0 +1,30 @@
+﻿@using DI.Services;
+@inject ICounter Counter;
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DI</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="text-center">
+        <h1 class="display-4">Service Count: @Counter.Count</h1>
+    </div>
+
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <button type="submit" class="btn btn-primary">Increment</button>
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>
